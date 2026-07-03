@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Mission Zeltlager</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#f7b6ce">
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app"></main>
+  <div id="confetti" aria-hidden="true"></div>
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <h2 id="modalTitle"></h2>
+      <p id="modalText"></p>
+      <img id="modalImage" class="modal-image hidden" alt="Hinweisbild">
+      <button id="modalButton" class="primary">Verstanden</button>
+    </div>
+  </div>
+  <div id="mapModal" class="modal hidden">
+    <div class="map-card">
+      <button id="closeMap" class="close">Schließen</button>
+      <img src="assets/map.png" alt="Landkarte">
+    </div>
+  </div>
+  <script src="missions.js"></script>
+  <script src="script.js"></script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js'));
+    }
+  </script>
+</body>
+</html>
