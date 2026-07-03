@@ -23,3 +23,56 @@ p{font-size:clamp(20px,2.05vw,28px);line-height:1.27;margin:8px 0 16px}.answer-t
 @media (min-width:1000px) and (orientation:landscape){.screen{padding:38px 54px 58px}.card{width:min(1080px,84vw);max-height:calc(100dvh - 126px);padding:32px 40px}.card h1{font-size:46px}p{font-size:25px;line-height:1.28;margin:8px 0 14px}.answer-title{font-size:22px;margin:12px 0 8px}.letter{width:47px;height:50px;font-size:25px;border-radius:13px}.number{width:58px;height:50px;font-size:25px}.inputs{gap:8px 9px;margin-bottom:12px}.word-group{gap:5px;margin-right:13px;margin-bottom:8px}.field-row{gap:12px;margin:9px 0}.field-label{font-size:23px;min-width:145px}.primary,.secondary,.nav-btn{font-size:23px;padding:13px 26px}.actions{margin-top:8px}.error-msg{font-size:20px;min-height:24px}.pill{font-size:17px;padding:7px 14px}}
 @media (orientation:portrait){.screen{align-items:center;padding:48px 20px 74px}.card{width:92vw;max-height:calc(100dvh - 128px);padding:22px;overflow:hidden}.letter{width:38px;height:43px;font-size:22px;border-radius:11px}.number{width:48px;height:43px;font-size:22px}.word-group{gap:4px;margin-right:9px}.primary,.secondary,.nav-btn{font-size:18px;padding:12px 20px}.team-labels{display:none}p{font-size:20px}.card h1{font-size:34px}.field-label{font-size:19px;min-width:125px}}
 @media (max-width:700px){.card{width:94vw;padding:18px;border-radius:24px;max-height:calc(100dvh - 104px)}.letter{width:32px;height:38px;font-size:19px;border-radius:9px}.number{width:40px;height:38px;font-size:19px}.word-group{gap:3px;margin-right:7px}.nav-btn{font-size:15px;padding:9px 14px}.team-labels{display:none}p{font-size:18px}.card h1{font-size:30px}.field-label{font-size:17px;min-width:110px}.primary,.secondary{font-size:17px;padding:10px 18px}}
+
+/* ===== Mission Zeltlager 3.0 – kleine Spielereien ===== */
+.intro-screen::before{
+  content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.72),rgba(255,255,255,.04) 45%,rgba(0,0,0,.12));
+  animation:introFade 1.6s ease-out both;pointer-events:none;
+}
+.intro-title{position:absolute;left:50%;top:7%;transform:translateX(-50%);text-align:center;z-index:3;animation:floatIn 1.2s ease-out both .2s;pointer-events:none;}
+.intro-title h1{font-size:clamp(52px,8vw,104px);margin:0;color:#fff;text-shadow:0 7px 28px rgba(0,0,0,.35);}
+.intro-title p{margin:8px 0;color:white;font-size:clamp(22px,3vw,38px);font-weight:1000;text-shadow:0 4px 18px rgba(0,0,0,.38);}
+.intro-title .tap-hint{display:inline-block;background:rgba(255,255,255,.82);color:#3c2c48;border-radius:999px;padding:12px 28px;margin-top:12px;text-shadow:none;animation:pulseHint 1.9s ease-in-out infinite;}
+.team-zone{z-index:4;}
+.tent-pop{animation:tentPop .42s ease-in-out both!important;}
+.mission-card-enter{animation:cardIn .38s ease-out both;}
+.page-out{animation:pageOut .16s ease-in both;}
+.compass{position:absolute;right:18px;top:18px;z-index:4;font-size:44px;filter:drop-shadow(0 8px 16px rgba(0,0,0,.28));animation:compassTurn 8s linear infinite;pointer-events:none;}
+.progress-tents{display:flex;gap:8px;justify-content:center;margin:-10px 0 10px;font-size:28px;line-height:1;filter:drop-shadow(0 3px 6px rgba(0,0,0,.14));}
+.progress-tents span{opacity:.25;transform:scale(.9);}
+.progress-tents span.done{opacity:1;transform:scale(1);}
+.mission-tagline{font-size:clamp(17px,1.55vw,22px);font-weight:900;color:#6b5271;background:rgba(255,255,255,.55);border-radius:18px;padding:8px 14px;margin:-4px 0 10px;}
+.theme-pink .primary{background:linear-gradient(135deg,#ff79bd,#ef7db8,#c77dff)}
+.theme-gelb .primary{background:linear-gradient(135deg,#ffd24d,#f3b847,#ff9f43);color:#5a3a12}
+.theme-blau .primary{background:linear-gradient(135deg,#62c7ff,#64b8ee,#6f8cff)}
+.modal-card{animation:modalPop .28s ease-out both;}
+.modal-card h2::before{content:"✨ ";}
+.modal-card h2::after{content:" ✨";}
+.map-card{transform-origin:top center;}
+.map-unroll{animation:mapUnroll .45s ease-out both;}
+.treasure-chest{font-size:clamp(70px,11vw,130px);line-height:1;margin:4px 0 14px;filter:drop-shadow(0 16px 24px rgba(0,0,0,.24));animation:chestBounce 1.3s ease-in-out infinite;}
+.treasure-chest.open{animation:chestOpen 1.2s ease-out both;}
+.treasure-finale h2{font-size:clamp(38px,5vw,72px);margin:8px 0;color:#3b2945;}
+.star-piece{position:fixed;z-index:55;font-size:34px;pointer-events:none;animation:starPop 1.2s ease-out forwards;}
+.confetti-piece{box-shadow:0 2px 6px rgba(0,0,0,.08);}
+@keyframes introFade{from{opacity:0}to{opacity:1}}
+@keyframes floatIn{from{opacity:0;transform:translate(-50%,-16px)}to{opacity:1;transform:translate(-50%,0)}}
+@keyframes pulseHint{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+@keyframes tentPop{0%{transform:scale(1)}35%{transform:scale(.92) rotate(-1deg)}70%{transform:scale(1.06) rotate(1deg)}100%{transform:scale(1)}}
+@keyframes cardIn{from{opacity:0;transform:translateY(22px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes pageOut{to{opacity:.2;transform:scale(.99)}}
+@keyframes compassTurn{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes modalPop{from{opacity:0;transform:translateY(16px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes mapUnroll{0%{opacity:0;transform:perspective(900px) rotateX(-80deg) scale(.94)}65%{opacity:1;transform:perspective(900px) rotateX(8deg) scale(1.01)}100%{opacity:1;transform:perspective(900px) rotateX(0) scale(1)}}
+@keyframes chestBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes chestOpen{0%{transform:scale(.8) rotate(-4deg);opacity:.2}55%{transform:scale(1.15) rotate(3deg);opacity:1}100%{transform:scale(1) rotate(0)}}
+@keyframes starPop{0%{opacity:0;transform:scale(.2) rotate(0deg)}45%{opacity:1;transform:scale(1.2) rotate(15deg)}100%{opacity:0;transform:translateY(-38px) scale(.4) rotate(45deg)}}
+
+@media (min-width:1000px) and (orientation:landscape){
+  .intro-title{top:5%}.intro-title h1{font-size:82px}.intro-title p{font-size:30px}.intro-title .tap-hint{font-size:28px}
+  .compass{right:24px;top:22px;font-size:46px}.progress-tents{font-size:25px;margin-top:-8px}.mission-tagline{font-size:19px;padding:7px 12px}
+}
+@media (max-width:700px){
+  .intro-title{top:7%}.intro-title h1{font-size:42px}.intro-title p{font-size:20px}.intro-title .tap-hint{font-size:18px;padding:9px 18px}
+  .compass{font-size:30px;right:12px;top:12px}.progress-tents{font-size:19px;gap:4px}.mission-tagline{font-size:15px}
+}
