@@ -1,5 +1,11 @@
-Mission Zeltlager – HTML-Version
+Mission Zeltlager 3.0
 
-Start: index.html öffnen.
-Die App merkt sich den Fortschritt im Browser. Mit „Neustart“ wird alles zurückgesetzt.
-Bilder liegen im Ordner assets.
+Start lokal: index.html öffnen.
+Für GitHub Pages: Alle Dateien und den Ordner assets hochladen.
+
+Wichtig:
+- Startseite: Team über die drei Zelte auswählen.
+- Fortschritt wird im Browser gespeichert.
+- Neustart löscht den Fortschritt.
+- Landkarte öffnet sich auf jeder Missionsseite.
+- Als iPad-App: Website in Safari öffnen → Teilen → Zum Home-Bildschirm.
